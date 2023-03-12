@@ -1,17 +1,31 @@
 
-const name = 'Pat'
-const gerAge = () =>{
-  return 18
-}
-const flag = true
-function App() {
-  return (
-    <div className="App">
-      {name}
-      {gerAge()}
-      {flag? 'good':'bad'}
-    </div>
-  );
+import './App.css'
+import React from "react"
+function Hello () {
+  const alert123 = () => {
+    alert('aaa')
+  }
+  return <div onClick={alert123}>hello</div>
 }
 
-export default App;
+class HelloComponent extends React.Component {
+  alert345 = () => {
+    console.log(345)
+  }
+  render () {
+    return <div onClick={this.alert345}>hello component</div>
+  }
+}
+
+function App () {
+  return (
+    <div className="App">
+      <Hello />
+      <Hello></Hello>
+      <HelloComponent />
+      <HelloComponent></HelloComponent>
+    </div>
+  )
+}
+
+export default App

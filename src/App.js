@@ -9,8 +9,14 @@ function Hello () {
 }
 
 class HelloComponent extends React.Component {
-  alert345 = () => {
-    console.log(345)
+  state = {
+    counter: 0
+  }
+  alert345 = (e) => {
+    this.setState({
+      counter: this.state.counter + 1
+    })
+    console.log(this.state.counter)
   }
   render () {
     return <div onClick={this.alert345}>hello component</div>

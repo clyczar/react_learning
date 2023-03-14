@@ -10,26 +10,33 @@ function Hello () {
 
 class HelloComponent extends React.Component {
   state = {
-    counter: 0
+    message: 'this is message'
   }
-  alert345 = (e) => {
+  submitInput = (e) => {
+    console.log(e)
     this.setState({
-      counter: this.state.counter + 1
+      message: e.target.value
     })
-    console.log(this.state.counter)
   }
+
   render () {
-    return <div onClick={this.alert345}>hello component</div>
+    return (
+      <>
+        <div>
+          <input type='text' value={this.state.message} onChange={this.submitInput}></input>
+        </div>
+      </>
+    )
   }
 }
 
 function App () {
   return (
     <div className="App">
-      <Hello />
-      <Hello></Hello>
+      {/* <Hello />
+      <Hello></Hello> */}
       <HelloComponent />
-      <HelloComponent></HelloComponent>
+      {/* <HelloComponent></HelloComponent> */}
     </div>
   )
 }
